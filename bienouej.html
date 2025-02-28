@@ -3,18 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bien joué</title>
+    <title>Page des Poussins</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        /* Styles globaux */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
         body {
-            background-color: black;
+            background-color: #f8f4e6; /* Couleur de fond douce */
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
         }
+
+        .content {
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #f6c90e; /* Couleur jaune poussin */
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .poussin {
+            width: 100px;
+            height: 100px;
+            background-image: url('https://www.clipartmax.com/png/middle/243-2431031_cute-baby-chick-clipart-png-clip-art-chick-clipart.png'); /* Image d'un poussin */
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: moveChicks 10s infinite alternate;
+        }
+
+        @keyframes moveChicks {
+            0% {
+                top: 50%;
+                left: 50%;
+            }
+            25% {
+                top: 10%;
+                left: 10%;
+            }
+            50% {
+                top: 90%;
+                left: 10%;
+            }
+            75% {
+                top: 90%;
+                left: 90%;
+            }
+            100% {
+                top: 10%;
+                left: 90%;
+            }
+        }
+
     </style>
 </head>
 <body>
+
+    <!-- Zone de contenu -->
+    <div class="content">
+        <h1>Bienvenue dans le monde des poussins !</h1>
+        <p>Admirez ces adorables poussins qui se déplacent autour de la page.</p>
+    </div>
+
+    <!-- Image de poussins animée -->
+    <div class="poussin"></div>
+
 </body>
 </html>
