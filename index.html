@@ -47,7 +47,7 @@
             font-size: 18px;
         }
         button:hover {
-            background: dark_green;
+            background: darkgreen;
         }
         @keyframes heartbeat {
             0% { transform: scale(1); }
@@ -79,11 +79,18 @@
 
             if (passwordField.value !== correctPassword) {
                 message.textContent = "Rééssaye !"; // Afficher message d'erreur
-                passwordField.remove(); // Supprimer le champ de saisie
+                passwordField.value = ""; // Réinitialiser le champ input
             } else {
                 window.location.href = "bienouej.html"; // Redirection vers la page 2
             }
         }
+
+        // Permet d'utiliser la touche "Entrée" pour valider
+        document.getElementById("password").addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                checkPassword();
+            }
+        });
     </script>
 </body>
 </html>
