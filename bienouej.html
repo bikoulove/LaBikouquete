@@ -23,6 +23,21 @@
             position: relative;
             overflow: hidden;
         }
+            .fade-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 192, 203, 1); /* Rose */
+            z-index: 999;
+            animation: fadeOut 4s ease-out forwards;
+        }
+
+        @keyframes fadeOut {
+            from { opacity: 1; }
+            to { opacity: 0; visibility: hidden; }
+        }
 
         .content {
             padding: 20px;
